@@ -43,6 +43,6 @@ class Queue
 
   # Check if the queue is empty
   def empty?
-    queue.empty
+    queue.empty?
   end
 end
