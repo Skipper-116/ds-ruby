@@ -29,6 +29,7 @@ The following data structures are implemented in this repository:
 - Linked List
 - Stack
 - Queue
+- Priority Queue
 - Binary Tree
 - Hash Table
 
