@@ -15,7 +15,7 @@ This repository contains custom implementations of various data structures in Ru
 To get started, clone the repository:
 
 ```sh
-git clone git@github.com:Skipper-116/ds-ruby.git
+git clone https://github.com/Skipper-116/ds-ruby.git
 cd ds-ruby
 ```
 

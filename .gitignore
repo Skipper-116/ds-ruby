@@ -1,0 +1,58 @@
+# Ignore bundler config
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore other unneeded files
+*.swp
+*.swo
+*.bak
+*.tmp
+*.DS_Store
+
+# Ignore coverage reports
+/coverage
+
+# Ignore system generated files
+/.DS_Store
+
+# Ignore node_modules
+/node_modules
+
+# Ignore byebug command history file.
+/.byebug_history
+
+# Ignore RubyMine project files
+.idea
+
+# Ignore gem files
+*.gem
+
+# Ignore documentation files
+/doc/
+
+# Ignore test results
+/test/tmp
+/test/version_tmp
+/test/reports
+
+# Ignore IRB history
+/.irb-history
+
+# Ignore installed gems
+/vendor/bundle
+
+# Ignore dotenv files
+.env
+
+# Ignore the Gemfile.lock
+Gemfile.lock
+
+# Ignore vendor files
+/vendor

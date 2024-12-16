@@ -8,7 +8,7 @@ Thank you for considering contributing to our project! We welcome contributions 
 
 2. **Clone the Repository**: Clone your forked repository to your local machine using the following command:
     ```sh
-    git clone git@github.com:Skipper-116/ds-ruby.git
+    git clone https://github.com/Skipper-116/ds-ruby.git
     ```
 
 3. **Create a Branch**: Create a new branch for your feature or bug fix:
