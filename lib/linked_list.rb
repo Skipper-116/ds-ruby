@@ -16,12 +16,11 @@ class LinkedList
     node = Node.new(value)
     if @head.nil?
       @head = node
-      @tail = node
     else
       @tail.next = node
       node.prev = @tail
-      @tail = node
     end
+    @tail = node
   end
 
   # Insert a node anywhere in the list

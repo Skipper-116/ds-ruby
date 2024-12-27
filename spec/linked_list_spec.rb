@@ -84,4 +84,4 @@ RSpec.describe LinkedList do
     end
   end
 end
-# rubocop:enable Metrics/BlocLength
+# rubocop:enable Metrics/BlockLength
