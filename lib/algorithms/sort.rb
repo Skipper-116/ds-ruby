@@ -31,6 +31,22 @@ module Algorithms
         end
       end
     end
+
+    def self.insertion(array)
+      n = array.size - 1
+      (1..n).each do |i|
+        j = i - 1
+        key = array[i]
+        min = i
+
+        j.downto(0) do |k|
+          if key < array[k]
+            array[k], array[min] = array[min], array[k]
+            min = k
+          end
+        end
+      end
+    end
     # rubocop:enable Metrics/MethodLength
   end
 end
