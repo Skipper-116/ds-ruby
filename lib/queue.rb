@@ -22,6 +22,8 @@ class Queue
 
   # Get the first element in the queue without removing it
   def peek
+    raise 'Queue is empty' if queue.empty?
+
     queue.first
   end
 
@@ -34,6 +36,11 @@ class Queue
   def search(value)
     result = queue.index(value)
     result || -1
+  end
+
+  # Check if the queue contains an element
+  def include?(value)
+    queue.include?(value)
   end
 
   # Clear the queue of all elements

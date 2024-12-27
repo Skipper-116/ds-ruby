@@ -20,6 +20,7 @@ RSpec.describe Queue do
       queue.enqueue(2)
       queue.dequeue
       expect(queue.size).to eq(1)
+      expect(queue.peek).to eq(2)
     end
 
     it 'raises an error if the queue is empty' do
@@ -32,6 +33,10 @@ RSpec.describe Queue do
        queue.enqueue(1)
        queue.enqueue(2)
        expect(queue.peek).to eq(1)
+    end
+
+    it 'raises an error if the queue is empty' do
+      expect { queue.peek }.to raise_error('Queue is empty')
     end
   end
 
@@ -54,6 +59,15 @@ RSpec.describe Queue do
        queue.enqueue(1)
        queue.enqueue(2)
        expect(queue.search(3)).to eq(-1)
+    end
+  end
+
+  describe '#include?' do
+    it 'return true or false if the queue contains an element' do
+      queue.enqueue(1)
+      queue.enqueue(2)
+      expect(queue.include?(2)).to eq(true)
+      expect(queue.include?(3)).to eq(false)
     end
   end
 
