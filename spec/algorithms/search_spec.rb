@@ -3,6 +3,7 @@
 require 'rspec'
 require_relative '../../lib/algorithms/search'
 
+# rubocop:disable Metrics/BlockLength
 describe Algorithms::Search do
   let(:array) { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }
 
@@ -48,3 +49,4 @@ describe Algorithms::Search do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
