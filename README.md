@@ -30,6 +30,7 @@ The following data structures are implemented in this repository:
 - Stack
 - Queue
 - Priority Queue
+- Dynamic Array
 - Binary Tree
 - Hash Table
 
