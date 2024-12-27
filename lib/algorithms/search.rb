@@ -10,5 +10,24 @@ module Algorithms
       end
       -1
     end
+
+    # rubocop:disable Metrics/MethodLength
+    def self.binary(array, data)
+      low = 0
+      high = array.size - 1
+
+      while low <= high
+        mid = (low + high) / 2
+        return mid if array[mid] == data
+
+        if array[mid] < data
+          low = mid + 1
+        else
+          high = mid - 1
+        end
+      end
+      -1
+    end
+    # rubocop:enable Metrics/MethodLength
   end
 end

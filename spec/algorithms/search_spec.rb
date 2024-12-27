@@ -19,4 +19,18 @@ describe Algorithms::Search do
       end
     end
   end
+
+  describe '.binary' do
+    context 'when the element is in the array' do
+      it 'returns the index of the element' do
+        expect(Algorithms::Search.binary(array, 3)).to eq(2)
+      end
+    end
+
+    context 'when the element is not in the array' do
+      it 'returns -1' do
+        expect(Algorithms::Search.binary(array, 10)).to eq(-1)
+      end
+    end
+  end
 end
