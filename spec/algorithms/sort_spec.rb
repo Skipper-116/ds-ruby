@@ -8,9 +8,24 @@ describe Algorithms::Sort do
 
   describe '.bubble' do
     context 'when the array is not sorted' do
-      it 'sorts the array' do
+      it 'sorts the array using bubble' do
+        start = Time.now
         Algorithms::Sort.bubble(array)
         expect(array).to eq([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        close = Time.now
+        puts "Bubble took: #{close - start} seconds"
+      end
+    end
+  end
+
+  describe '.selection' do
+    context 'when the array is not sorted' do
+      it 'sorts the array using selection algorithm' do
+        start = Time.now
+        Algorithms::Sort.selection(array)
+        expect(array).to eq([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        close = Time.now
+        puts "Selection took: #{close - start} seconds"
       end
     end
   end

@@ -18,6 +18,19 @@ module Algorithms
         break unless swapped
       end
     end
+
+    def self.selection(array)
+      size = array.size - 1
+
+      size.times do |i|
+        j = i + 1
+        break if i == size
+
+        (j..size).each do |k|
+          array[i], array[k] = array[k], array[i] if array[i] > array[k]
+        end
+      end
+    end
     # rubocop:enable Metrics/MethodLength
   end
 end
