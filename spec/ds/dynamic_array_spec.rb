@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'rspec'
-require_relative '../lib/dynamic_array'
+require_relative '../../lib/ds/dynamic_array'
 
 # rubocop:disable Metrics/BlockLength
-RSpec.describe DynamicArray do
-  let(:da) { DynamicArray.new }
+RSpec.describe Ds::DynamicArray do
+  let(:da) { Ds::DynamicArray.new }
 
   describe '#add' do
     it 'adds an element to the array' do

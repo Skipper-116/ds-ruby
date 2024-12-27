@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'rspec'
-require_relative '../lib/queue'
+require_relative '../../lib/ds/queue'
 
 # rubocop:disable Metrics/BlockLength
-RSpec.describe Queue do
-  let(:queue) { Queue.new }
+RSpec.describe Ds::Queue do
+  let(:queue) { Ds::Queue.new }
 
   describe '#enqueue' do
     it 'adds an element to the queue' do

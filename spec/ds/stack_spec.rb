@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'rspec'
-require_relative '../lib/stack'
+require_relative '../../lib/ds/stack'
 
 # rubocop:disable Metrics/BlockLength
-RSpec.describe Stack do
-  let(:stack) { Stack.new }
+RSpec.describe Ds::Stack do
+  let(:stack) { Ds::Stack.new }
 
   describe '#push' do
     it 'adds an element to the stack' do

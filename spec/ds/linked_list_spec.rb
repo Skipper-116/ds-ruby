@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'rspec'
-require_relative '../lib/linked_list'
+require_relative '../../lib/ds/linked_list'
 
 # rubocop:disable Metrics/BlockLength
-RSpec.describe LinkedList do
-  let(:list) { LinkedList.new }
+RSpec.describe Ds::LinkedList do
+  let(:list) { Ds::LinkedList.new }
 
   describe '#append' do
     it 'adds a node to the end of the list' do

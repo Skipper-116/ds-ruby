@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'rspec'
-require_relative '../lib/priority_queue'
+require_relative '../../lib/ds/priority_queue'
 
 # rubocop:disable Metrics/BlockLength
-RSpec.describe PriorityQueue do
-  let(:priority_queue) { PriorityQueue.new }
+RSpec.describe Ds::PriorityQueue do
+  let(:priority_queue) { Ds::PriorityQueue.new }
 
   describe '#push' do
     it 'adds an element to the priority queue' do
