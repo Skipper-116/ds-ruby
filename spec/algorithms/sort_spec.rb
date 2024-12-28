@@ -79,5 +79,18 @@ describe Algorithms::Sort do
       end
     end
   end
+
+  describe '.quick' do
+    context 'when the array is not sorted' do
+      it 'sorts the array using quick algorithm' do
+        start = Time.now
+        wow = array.dup
+        Algorithms::Sort.quick(wow, 0, wow.size - 1)
+        expect(wow).to eq(sorted)
+        close = Time.now
+        puts "Quick took: #{close - start} seconds"
+      end
+    end
+  end
 end
 # rubocop:enable Metrics/BlockLength

@@ -91,6 +91,31 @@ module Algorithms
         r += 1
       end
     end
-     # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
+
+    def self.quick(array, start, close)
+      return if close <= start
+
+      pivot = partition(array, start, close)
+      quick(array, start, pivot - 1)
+      quick(array, pivot + 1, close)
+    end
+
+    def self.partition(array, start, close)
+      pivot = array[close]
+      i = start - 1
+
+      (start...close).each do |j|
+        if array[j] < pivot
+          i += 1
+          array[i], array[j] = array[j], array[i]
+        end
+      end
+
+      i += 1
+      # Place the pivot in its correct position
+      array[i], array[close] = array[close], array[i]
+      i
+    end
+    # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
   end
 end
