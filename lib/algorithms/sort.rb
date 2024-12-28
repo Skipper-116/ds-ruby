@@ -47,6 +47,50 @@ module Algorithms
         end
       end
     end
-    # rubocop:enable Metrics/MethodLength
+
+    def self.merge(array)
+      n = array.size
+      return if n <= 1
+
+      left = array.take(n / 2)
+      right = array.drop(n / 2)
+      merge(left)
+      merge(right)
+      merger(left, right, array)
+    end
+
+    # rubocop:disable Metrics/AbcSize
+    def self.merger(left, right, array)
+      left_size = array.size / 2
+      right_size = array.size - left_size
+      i = 0
+      l = 0
+      r = 0
+
+      while l < left_size && r < right_size
+        if left[l] < right[r]
+          array[i] = left[l]
+          i += 1
+          l += 1
+        else
+          array[i] = right[r]
+          i += 1
+          r += 1
+        end
+      end
+
+      while l < left_size
+        array[i] = left[l]
+        i += 1
+        l += 1
+      end
+
+      while r < right_size
+        array[i] = right[r]
+        i += 1
+        r += 1
+      end
+    end
+     # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
   end
 end
