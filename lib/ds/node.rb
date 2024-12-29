@@ -19,12 +19,20 @@ module Ds
       @prev = node
     end
 
+    def data=(data)
+      @value = data
+    end
+
     def right
       @next
     end
 
     def left
       @prev
+    end
+
+    def data
+      @value
     end
 
     def to_s
