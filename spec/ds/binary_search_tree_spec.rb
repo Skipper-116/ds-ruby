@@ -97,5 +97,25 @@ RSpec.describe Ds::BinarySearchTree do
       end
     end
   end
+
+  describe '#traverse' do
+    context 'when the tree is empty' do
+      it 'prints nothing' do
+        expect { tree.traverse }.to output("{}\n").to_stdout
+      end
+    end
+
+    context 'when the tree is not empty' do
+      it 'prints the tree' do
+        node1 = Ds::Node.new(5)
+        node2 = Ds::Node.new(3)
+        node3 = Ds::Node.new(7)
+        tree.insert(node1)
+        tree.insert(node2)
+        tree.insert(node3)
+        expect { tree.traverse }.to output("{0=>[5], 1=>[3, 7]}\n").to_stdout
+      end
+    end
+  end
 end
 # rubocop:enable Metrics/BlockLength
