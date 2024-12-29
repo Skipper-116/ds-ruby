@@ -92,5 +92,33 @@ RSpec.describe Ds::Graph do
       end
     end
   end
+
+  describe '#check_edge' do
+    context 'when the graph is a list' do
+      it 'checks if an edge exists' do
+        graph = Ds::Graph.new(type: :list, directed: false)
+        graph.add_edge(1, 2)
+        expect(graph.check_edge(1, 2)).to eq(true)
+      end
+
+      it 'checks if an edge does not exist' do
+        graph = Ds::Graph.new(type: :list, directed: false)
+        expect(graph.check_edge(1, 2)).to eq(false)
+      end
+    end
+
+    context 'when the graph is a matrix' do
+      it 'checks if an edge exists' do
+        graph = Ds::Graph.new(type: :matrix, directed: true)
+        graph.add_edge(1, 2)
+        expect(graph.check_edge(1, 2)).to eq(true)
+      end
+
+      it 'checks if an edge does not exist' do
+        graph = Ds::Graph.new(type: :matrix, directed: true)
+        expect(graph.check_edge(1, 2)).to eq(false)
+      end
+    end
+  end
 end
 # rubocop:enable Metrics/BlockLength

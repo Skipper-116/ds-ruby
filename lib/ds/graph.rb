@@ -61,6 +61,16 @@ module Ds
       end
     end
 
+    def check_edge(vertex_one, vertex_two)
+      if type == :list
+        storage[vertex_one].include?(vertex_two) || storage[vertex_two].include?(vertex_one)
+      else
+        storage[vertex_one][vertex_two] == 1 || storage[vertex_two][vertex_one] == 1
+      end
+    rescue StandardError
+      false
+    end
+
     private
 
     def add_vertex(vertex)
