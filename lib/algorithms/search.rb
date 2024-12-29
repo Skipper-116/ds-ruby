@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../ds/queue'
+
 # module Algorithms
 module Algorithms
   # this class is a search algorithm implementation
@@ -71,6 +73,24 @@ module Algorithms
       puts "#{src} = visited"
       graph[src].each do |edge|
         depth_first_list(edge, visited, graph) unless visited[edge]
+      end
+    end
+
+    def self.breadth_first(graph, src)
+      queue = Ds::Queue.new
+      visited = Array.new(graph.storage.size, false)
+      queue.enqueue(src)
+      visited[src] = true
+
+      until queue.empty?
+        src = queue.dequeue
+        puts "#{src} = visited"
+        graph.storage[src].each_with_index do |_edge, i|
+          if graph.storage[src][i] == 1 && !visited[i]
+            queue.enqueue(i)
+            visited[i] = true
+          end
+        end
       end
     end
     # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
