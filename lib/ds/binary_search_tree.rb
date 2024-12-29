@@ -36,6 +36,12 @@ module Ds
       end
     end
 
+    def traverse
+      map = {}
+      traverse_helper(@root, map)
+      puts map
+    end
+
     private
 
     # rubocop:disable Metrics/MethodLength
@@ -111,6 +117,15 @@ module Ds
       root = root.left
       root = root.right until root&.right&.empty? if root&.right
       root.data
+    end
+
+    def traverse_helper(root, map, depth = 0)
+      return unless root
+
+      map[depth] ||= []
+      map[depth] << root.data
+      traverse_helper(root.left, map, depth + 1)
+      traverse_helper(root.right, map, depth + 1)
     end
     # rubocop:enable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   end
