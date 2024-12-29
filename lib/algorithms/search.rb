@@ -47,6 +47,32 @@ module Algorithms
       end
       -1
     end
+
+    def self.depth_first(graph, src)
+      visited = Array.new(graph.storage.size, false)
+      depth_first_matrix(src, visited, graph.storage) if graph.type == :matrix
+      depth_first_list(src, visited, graph.storage) if graph.type == :list
+    end
+
+    def self.depth_first_matrix(src, visited, graph)
+      return if visited[src]
+
+      visited[src] = true
+      puts "#{src} = visited"
+      graph[src].each_with_index do |edge, i|
+        depth_first_matrix(i, visited, graph) if edge == 1 && !visited[i]
+      end
+    end
+
+    def self.depth_first_list(src, visited, graph)
+      return if visited[src]
+
+      visited[src] = true
+      puts "#{src} = visited"
+      graph[src].each do |edge|
+        depth_first_list(edge, visited, graph) unless visited[edge]
+      end
+    end
     # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
   end
 end
