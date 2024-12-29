@@ -11,6 +11,22 @@ module Ds
       @next = nil
     end
 
+    def right=(node)
+      @next = node
+    end
+
+    def left=(node)
+      @prev = node
+    end
+
+    def right
+      @next
+    end
+
+    def left
+      @prev
+    end
+
     def to_s
       value.to_s
     end
